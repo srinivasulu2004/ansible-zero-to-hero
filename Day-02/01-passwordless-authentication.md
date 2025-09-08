@@ -16,9 +16,9 @@ in manager_node  :
 
 
   -- now try to access that manager_node by using
+  
   ''
     ssh ubuntu@publicip_of_managernode
-    
     ''
 
   now you can observe that with out using any password we can access our manager_node 
