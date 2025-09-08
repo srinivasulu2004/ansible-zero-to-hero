@@ -1,23 +1,23 @@
-# How to setup Passwordless Authentication
-
-## EC2 Instances
-
-### Using Public Key
-
-```
-ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
-```
-
-- ssh-copy-id: This is the command used to copy your public key to a remote machine.
-- -f: This flag forces the copying of keys, which can be useful if you have keys already set up and want to overwrite them.
-- "-o IdentityFile <PATH TO PEM FILE>": This option specifies the identity file (private key) to use for the connection. The -o flag passes this option to the underlying ssh command.
-- ubuntu@<INSTANCE-IP>: This is the username (ubuntu) and the IP address of the remote server you want to access.
+# How to setup Passwordless Authentication.
 
 ### Using Password 
-
-- Go to the file `/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
+in manager_node  :
+- got to the file and un comment "PasswordAuthentication yes" -> 'vi /etc/ssh/sshd_config'
+- Go to the file   `vi /etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
 - Update `PasswordAuthentication yes`
 - Restart SSH -> `sudo systemctl restart ssh`
+- craeae password -> 'sudo passwd ubuntu'
+- keep in remember that password
+- ---- in controler_node----
+- use this commands
+- []$ 'ssh-copy-id ubuntu@<public ip of manager_node>'
+ now it will ask password please provide
+  -- now try to access that manager_node by using
+  ''
+    ssh ubuntu@<public ip of managernode>
+    ''
+  now you can observe that with out using any password we can access our manager_node 
+
 
 PRACTICALS.....................
 
