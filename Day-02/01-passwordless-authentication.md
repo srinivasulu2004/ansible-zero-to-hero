@@ -10,14 +10,14 @@ in manager_node  :
 - keep in remember that password
 - ---- in controler_node----
 - use this commands
-- []$ 'ssh-copy-id ubuntu@<public ip of manager_node>'
+- []$ 'ssh-copy-id ubuntu@publicip-manager_node'
 - 
  now it will ask password please provide
 
 
   -- now try to access that manager_node by using
   ''
-    ssh ubuntu@<public ip of managernode>
+    ssh ubuntu@publicip_of_managernode
     
     ''
 
