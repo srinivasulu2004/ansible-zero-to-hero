@@ -23,6 +23,45 @@ PRACTICALS.....................
 
 PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
   steps ::
+
+      --->> IN MANAGER_NODE(TARGETNODE) 
+           STEPS;;;;;;
+               -->> give the sudo privileges to the user(ex: ubuntu) on manager_node
+                   ''
+                       sudo usermod -aG sudo ubuntu
+
+                    ''
+                -->> now now copy the public ssh key from controler _node and paste them into targetnode
+
+                      ...steps for controler node 
+                           -> generating sshkeys on controler node 
+                             ''
+                             ssh-keygen -t rsa -b 4096
+                           ''
+                           -> now copy the public ssh key 
+                           ;;
+                            []$ cd ~/.ssh/
+                             cat id_rsa.pub
+                             ;;
+                      ....stepd for managernode
+                           ''
+                           cd ~/.ssh/
+                           vi authorized_keys
+                           ........PASTE HERE........
+
+
+                           --> now restart ssh
+                               ''
+                                sudo systemctl restart ssh
+                                ''
+
+
+
+
+
+
+
+  
     ----IN CONTROLER NODE ----
         --> install ansible in the controler node 
         
@@ -41,6 +80,7 @@ PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
           ''
       output::
       ''
+
             
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
