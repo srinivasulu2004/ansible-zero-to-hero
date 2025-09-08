@@ -11,11 +11,16 @@ in manager_node  :
 - ---- in controler_node----
 - use this commands
 - []$ 'ssh-copy-id ubuntu@<public ip of manager_node>'
+- 
  now it will ask password please provide
+
+
   -- now try to access that manager_node by using
   ''
     ssh ubuntu@<public ip of managernode>
+    
     ''
+
   now you can observe that with out using any password we can access our manager_node 
 
 
