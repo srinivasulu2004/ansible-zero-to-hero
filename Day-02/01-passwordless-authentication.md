@@ -19,3 +19,48 @@ ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 - Update `PasswordAuthentication yes`
 - Restart SSH -> `sudo systemctl restart ssh`
 
+PRACTICALS.....................
+
+PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
+  steps ::
+    ----IN CONTROLER NODE ----
+        --> install ansible in the controler node 
+        
+        ''
+        sudo apt update
+        sudo apt upgrade -y
+        sudo apt install ansible -y
+        ansible --version
+        ''
+
+        ---> copy public ssh keys into manager(target_node)
+
+         ''
+             ssh-copy-id ansible-user@192.168.1.100
+
+          ''
+      output::
+      ''
+            
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ubuntu/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: WARNING: All keys were skipped because they already exist on the remote system.
+                (if you think this is a mistake, you may want to use -f option)
+
+''
+
+   ---->> now connect to the targetnode (manager_node ) from controler_node with using password
+
+           ''
+              ssh ubuntu@<target_node public_ip>
+        ''
+
+
+
+
+
+        
+
+        
+        
