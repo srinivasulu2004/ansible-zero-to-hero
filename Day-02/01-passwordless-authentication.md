@@ -29,6 +29,8 @@ PRACTICALS.....................
 PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
   steps ::
 
+  HINT:::: {EVERYTHING  YOU SHOULD APPLY WITH STANDARD USER ONLY(UBUNTU) ON BOTH CONTRPLER AND MANAGE NODE EX:ubuntu@ip-172-31-85-221:~$...dont use sudo -i command for these setps in both nodes}
+
       --->> IN MANAGER_NODE(TARGETNODE) 
            STEPS;;;;;;
                -->> give the sudo privileges to the user(ex: ubuntu) on manager_node
@@ -41,16 +43,17 @@ PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
                       ...steps for controler node 
                            -> generating sshkeys on controler node 
                              ''
-                             ssh-keygen -t rsa -b 4096
+                             ssh-keygen -t rsa -b 4096     ( (THIS COMMAND WE SHOULD USE WITH STANDARD USER ONLY EX:ubuntu@ip-172-31-85-221:~$ssh-keygen -t rsa -b 4096)
                            ''
                            -> now copy the public ssh key 
                            ;;
                             []$ cd ~/.ssh/
                              cat id_rsa.pub
                              ;;
-                      ....stepd for managernode
+                      ....steps for managernode
                            ''
-                           cd ~/.ssh/
+                           cd ~/.ssh/ (THIS COMMAND WE SHOULD USE WITH STANDARD USER ONLY EX:ubuntu@ip-172-31-85-221:~$cd ~/.ssh )
+)
                            vi authorized_keys
                            ........PASTE HERE........
 
