@@ -47,15 +47,16 @@ PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
                            ''
                            -> now copy the public ssh key 
                            ;;
-                            []$ cd ~/.ssh/    [make sure here authorized_keys file should not there if it is present just remove that]
+                            []$ cd ~/.ssh/   
                              cat id_rsa.pub
                              ;;
                       ....steps for managernode
                            ''
                            cd ~/.ssh/ (THIS COMMAND WE SHOULD USE WITH STANDARD USER ONLY EX:ubuntu@ip-172-31-85-221:~$cd ~/.ssh )
 )
+                         
                            vi authorized_keys
-                           ........PASTE HERE........
+                           ........PASTE HERE........ (TAKE A NEW LINE FOLLOWED BY THE DEFAULT LINES THEN PASTE OTHER YOU MAY GET AN ERROR)
 
 
                            --> now restart ssh
