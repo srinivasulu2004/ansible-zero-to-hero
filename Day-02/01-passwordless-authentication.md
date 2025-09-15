@@ -43,7 +43,7 @@ PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
                       ...steps for controler node 
                            -> generating sshkeys on controler node 
                              ''
-                             ssh-keygen -t rsa -b 4096     ( (THIS COMMAND WE SHOULD USE WITH STANDARD USER ONLY EX:ubuntu@ip-172-31-85-221:~$ssh-keygen -t rsa -b 4096)
+                             ssh-keygen -t RSA -b 4096     ( (THIS COMMAND WE SHOULD USE WITH STANDARD USER ONLY EX:ubuntu@ip-172-31-85-221:~$ssh-keygen -t RSA -b 4096)
                            ''
                            -> now copy the public ssh key 
                            ;;
