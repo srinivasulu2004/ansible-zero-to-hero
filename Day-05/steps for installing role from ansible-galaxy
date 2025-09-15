@@ -1,0 +1,46 @@
+launch three instances (one is controler and remaing are two manage node)
+install ansible and ansible galaxy ..
+"""
+  sudo apt update -y
+  sudo apt install ansible -y
+  sudo apt install ansible-core
+ """
+ now set passwordless authentication ... among control node and manage nodes(by follow Day-02)
+create a inventory file in the controler node
+"""
+   sudo vi inventory.ini
+   ''
+   [webserver]
+   54.210.189.248 ansible_user=ubuntu
+
+   [dbserver]
+   3.94.132.62 ansible_user=ubuntu
+   ''
+  """
+  now test test the connection between contoler and manage node by using the below command
+  """
+  ansible -i <path of inventory file ex: ~/inventory.ini> -m ping all
+  """
+  if it success...
+  now go to browser then search for "ansible galaxy"
+  now got to--> roles  ---> now search your service name and choose one role ---> then you can see the section like "install"
+  there will be the comand for install that role copy that ... and  then go to the controler node then paste that command 
+  then that installation will be starting...
+  now after installtion use this command for see the list of roles "ls ~/.ansible/roles/"
+  so..
+  now go to write a playbook file  by mention that role( which you installed)
+  """
+  sudo vi playbook.yml
+  ''
+  ---
+- name: to install nginx by using install role from ansible galaxy
+  hosts: all
+  become: yes
+  roles:
+    - <name of the role>
+    ''
+    now run the command to run the role...
+    """
+    ansible-playbook -i inventory.ini  playbook.yml
+    """
+
