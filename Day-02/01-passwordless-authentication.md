@@ -47,7 +47,7 @@ PASSWORDLESS AUTHENTICATION(...UISNG SSH...)
                            ''
                            -> now copy the public ssh key 
                            ;;
-                            []$ cd ~/.ssh/
+                            []$ cd ~/.ssh/    [make sure here authorized_keys file should not there if it is present just remove that]
                              cat id_rsa.pub
                              ;;
                       ....steps for managernode
